@@ -1,11 +1,13 @@
 import run from "./run.js"
 
-const params = {
-    catalog: "collaborators"
-}
+addEventListener('DOMContentLoaded', () => {
+    const params = {
+        catalog: "collaborators"
+    }
 
-const el = document.querySelector("#app1")
-if (el) {
-    const result = run(params)
-    el.innerHTML = JSON.stringify(result)
-}
+    const el = document.querySelector("#app_root")
+    if (el) {
+        const result = run(params)
+        el.innerHTML = JSON.stringify(result)
+    }
+})
