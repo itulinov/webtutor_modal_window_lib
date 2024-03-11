@@ -14,8 +14,8 @@ addEventListener('DOMContentLoaded', () => {
 
     const el = document.querySelector("#app_root")
     if (el) {
-        const promise = run(params)
-        promise.then((data) => {
+        const res = run(params)
+        res.then((data) => {
             el.append(
                 JSON.stringify(data, null, 2)
             )

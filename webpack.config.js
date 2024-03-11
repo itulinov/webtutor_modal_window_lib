@@ -1,5 +1,8 @@
 const path = require("path")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const ModuleFederationPlugin = require(
+    "webpack/lib/container/ModuleFederationPlugin"
+)
 
 module.exports = {
     devtool: "source-map",
@@ -7,7 +10,9 @@ module.exports = {
     devServer: {
         port: 8001,
     },
-    entry: "./src/index.js",
+    entry: process.env.NODE_ENV === "development"
+                ? "./src/index.js"
+                : "./src/run.js",
     output: {
         path: path.resolve(__dirname, "build"),
         filename: "[name].bundle.js",
@@ -19,6 +24,13 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: "./public/index.html",
+        }),
+        new ModuleFederationPlugin({
+            name: "mwLib",
+            filename: "remoteEntry.js",
+            exposes: {
+                "./mwLibInit": "./src/run"
+            }
         }),
     ],
     module: {
