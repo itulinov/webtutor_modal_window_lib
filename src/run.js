@@ -1,29 +1,32 @@
+/**
+ * Запрос к серверу
+ * @param {object} param
+ * @return {Promise}
+ */
 export default (param={}) => {
+    const data = {
+        ...param,
+        action: "get-objects-for-modal-window",
+    }
 
-    // тут будет запрос к серверу
-    console.log("server: ", param)
-
-                $.ajax({
-                    url: "custom_web_template.html?object_id=7151025819625201817",
-                    data: {
-                        'action': "get-objects-for-modal-window",
-                        'catalog': "collaborators",
-                        'fields': "id,fullname,code",
-                        'find': "id,fullname,code",
-                        'value': "Тулинов",
-                        'ids': "",
-                        'user-where': "1=1",
-                        ssql: "",
-                        connection: "",
-                    },
-                    cache: false,
-                    type: 'POST',
-                    dataType: 'JSON',
-                }).done((data) => {
-                    console.log(data);
-                })
-    // а это ответ от сервера
-    return [{...param, name: "zhora"}]
+    // TODO: вынос адреса сервера
+    var url = "custom_web_template.html?object_id=7151025819625201817"
+    return getDataWithJQuery(url, data)
 }
 
 
+/**
+ * Функция обращения к серверу при помощи jQuery
+ * @param {string} url
+ * @param {object} data
+ * @return - данные ответа
+ */
+const getDataWithJQuery = async (url, data) => {
+    return await $.ajax({
+        url,
+        data,
+        cache: false,
+        type: "POST",
+        dataType: "JSON",
+    })
+}

@@ -5,7 +5,7 @@
     "homepage": "https://github.com/itulinov/webtutor_modal_window_lib#readme",
     "main": "./build/main.bundle.js",
     "scripts": {
-        "start": "node .",
+        "start": "node index.js",
         "build": "webpack --mode development"
     },
     "repository": {

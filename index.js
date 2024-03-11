@@ -51,7 +51,7 @@ browserSync.init({
         fn: (req, res, match) => {
             return `
                 <script src="main.bundle.js"></script>
-                <div id ="app_root"></div>
+                <pre id ="app_root"></pre>
             `;
         },
     }],
