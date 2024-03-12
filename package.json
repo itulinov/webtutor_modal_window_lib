@@ -1,13 +1,11 @@
 {
     "name": "webtutor_modal_window_lib",
-    "version": "1.0.2",
+    "version": "1.0.6",
     "description": "",
     "homepage": "https://github.com/itulinov/webtutor_modal_window_lib#readme",
-    "main": "./build/main.bundle.js",
-    "mode": "development",
+    "main": "./src/run.js",
     "scripts": {
-        "start": "node index.js",
-        "build": "webpack --config ./config/webpack.config.lib.js"
+        "start": "node ./index.js"
     },
     "repository": {
         "type": "git",

@@ -19,7 +19,7 @@ export default (param={}) => {
  * Функция обращения к серверу при помощи jQuery
  * @param {string} url
  * @param {object} data
- * @return - данные ответа
+ * @return промис
  */
 const getDataWithJQuery = async (url, data) => {
     return await $.ajax({
