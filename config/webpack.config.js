@@ -8,11 +8,9 @@ module.exports = {
     devtool: "source-map",
     mode: "development",
     devServer: {
-        port: 8001,
+        port: 3001,
     },
-    entry: process.env.NODE_ENV === "development"
-                ? "./src/index.js"
-                : "./src/run.js",
+    entry: "./src/index.js",
     output: {
         path: path.resolve(__dirname, "build"),
         filename: "[name].bundle.js",

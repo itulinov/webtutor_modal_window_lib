@@ -5,7 +5,7 @@ const BsSync = require('browser-sync');
 const browserSync = BsSync.create();
 
 // берем конфиги для вебпака и для запуска BrowserSync
-const webpackConfig = require('./webpack.config.js');
+const webpackConfig = require('./config/webpack.config.js');
 const bundler = webpack(webpackConfig);
 
 // куки нужны для того что бы подключиться к порталу без ввода пароля и тд
@@ -45,7 +45,7 @@ browserSync.init({
         ],
     },
     serveStatic: ['.', `./dist/`],
-    port: 8000,
+    port: 3001,
     rewriteRules: [{
         match: htmlStringReplacementRegExp,
         fn: (req, res, match) => {

@@ -4,9 +4,10 @@
     "description": "",
     "homepage": "https://github.com/itulinov/webtutor_modal_window_lib#readme",
     "main": "./build/main.bundle.js",
+    "mode": "development",
     "scripts": {
         "start": "node index.js",
-        "build": "webpack --mode development"
+        "build": "webpack --config ./config/webpack.config.lib.js"
     },
     "repository": {
         "type": "git",
