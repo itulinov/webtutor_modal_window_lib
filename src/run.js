@@ -6,27 +6,32 @@
 export default (param={}) => {
     const data = {
         ...param,
-        action: "get-objects-for-modal-window",
+        action: "records",
     }
 
     // TODO: вынос адреса сервера
-    var url = "custom_web_template.html?object_id=7151025819625201817"
-    return getDataWithJQuery(url, data)
+    var url = "custom_web_template.html?object_id=7342889447736440307"
+
+
+    return getDataWithJQuery(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+    })
 }
 
 
 /**
  * Функция обращения к серверу при помощи jQuery
  * @param {string} url
- * @param {object} data
- * @return промис
+ * @param {object} options
+ * @return - данные ответа
  */
-const getDataWithJQuery = async (url, data) => {
-    return await $.ajax({
-        url,
-        data,
+const getDataWithJQuery = (url, options) => {
+    return $.ajax({
+        url: url,
+        data: options.body,
         cache: false,
-        type: "POST",
-        dataType: "JSON",
+        type: options.method,
+        dataType: 'JSON',
     })
 }

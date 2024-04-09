@@ -5,7 +5,7 @@ addEventListener('DOMContentLoaded', () => {
         catalog: "collaborators",
         fields: "id,fullname,code",
         find: "id,fullname,code",
-        value: "Тулинов",
+        value: "Тулинова",
         ids: "",
         'user-where': "1=1",
         ssql: "",
