@@ -1,6 +1,6 @@
 {
     "name": "webtutor_modal_window_lib",
-    "version": "1.0.7",
+    "version": "1.0.8",
     "description": "",
     "homepage": "https://github.com/itulinov/webtutor_modal_window_lib#readme",
     "main": "./src/run.js",
