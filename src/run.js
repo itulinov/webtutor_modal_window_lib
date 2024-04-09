@@ -9,10 +9,7 @@ export default (param={}) => {
         action: "records",
     }
 
-    // TODO: вынос адреса сервера
     var url = "custom_web_template.html?object_id=7342889447736440307"
-
-
     return getDataWithJQuery(url, {
         method: 'POST',
         body: JSON.stringify(data),
